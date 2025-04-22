@@ -293,6 +293,12 @@ class CogGenerator(Redirectable):
             return ""
 
         prologue = "import " + cog.cogmodulename + " as cog\n"
+        prologue += """\
+import subprocess
+def dot(dot_source):
+    svg = subprocess.check_output(['dot', '-Tsvg'], input=dot_source.encode('utf-8'))
+    cog.out(svg.decode('utf-8'))
+"""
         if self.options.prologue:
             prologue += self.options.prologue + "\n"
         code = compile(prologue + intext, str(fname), "exec")
@@ -988,3 +994,7 @@ def find_cog_source(frame_summary, prologue):
 def main():
     """Main function for entry_points to use."""
     return Cog().main(sys.argv)
+
+
+if __name__ == "__main__":
+    main()

@@ -6,22 +6,7 @@ render graphviz in markdown.
 
 ## Usage
 
-Add input like:
+Add input like [example.md](example.md).
 
-```markdown
-<!-- article.md -->
-<!--[[[cog
-dot("""
-digraph G {
-    rankdir=LR;
-    YARV -> HIR;
-    HIR -> LIR;
-    LIR -> ASM;
-}
-""")
-]]]-->
-<!--[[[end]]]-->
-```
-
-Run `python ./cogapp.py -c -r article.md` (`-c` is for checksum, `-r` is for
+Run `python ./cogapp.py -c -r example.md` (`-c` is for checksum, `-r` is for
 in-place).
