@@ -9,3 +9,8 @@ render graphviz in markdown.
 Add input like [example.md](example.md).
 
 Run `python ./cogapp.py -r example.md` (`-r` is for in-place).
+
+## Alternatives
+
+* [pandoc-filter-graphviz](https://github.com/Hakuyume/pandoc-filter-graphviz)
+  and other [pandoc filters](https://benjaminwuethrich.dev/2020-06-29-pbb-dot-graphs.html)
