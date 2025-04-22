@@ -295,9 +295,13 @@ class CogGenerator(Redirectable):
         prologue = "import " + cog.cogmodulename + " as cog\n"
         prologue += """\
 import subprocess
-def dot(dot_source):
-    svg = subprocess.check_output(['dot', '-Tsvg'], input=dot_source.encode('utf-8'))
-    cog.out(svg.decode('utf-8'))
+import hashlib
+def dot(dot_source, out_file_name=None):
+    input_bytes = dot_source.encode('utf-8')
+    if out_file_name is None:
+        out_file_name = hashlib.md5(input_bytes).hexdigest() + ".svg"
+    subprocess.check_output(['dot', '-Tsvg', '-o', out_file_name], input=input_bytes)
+    cog.out(f'<object data="{out_file_name}" type="image/svg+xml"></object>')
 """
         if self.options.prologue:
             prologue += self.options.prologue + "\n"

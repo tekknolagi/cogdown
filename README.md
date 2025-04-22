@@ -8,5 +8,4 @@ render graphviz in markdown.
 
 Add input like [example.md](example.md).
 
-Run `python ./cogapp.py -c -r example.md` (`-c` is for checksum, `-r` is for
-in-place).
+Run `python ./cogapp.py -r example.md` (`-r` is for in-place).
