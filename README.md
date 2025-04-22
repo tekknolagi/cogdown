@@ -16,3 +16,4 @@ Run `python ./cogapp.py -r example.md` (`-r` is for in-place).
   and other [pandoc filters](https://benjaminwuethrich.dev/2020-06-29-pbb-dot-graphs.html)
   (see also [panflute](https://github.com/sergiocorreia/panflute))
 * [markdown-dot](https://github.com/jawher/markdown-dot)
+* Maybe [python-liquid](https://github.com/jg-rp/liquid)
